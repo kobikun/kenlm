@@ -23,6 +23,7 @@ set(KENLM_FILTER_SOURCE
 # refer to these objects as $<TARGET_OBJECTS:foo>
 #
 add_library(kenlm_filter ${KENLM_FILTER_SOURCE})
+target_link_libraries(kenlm_filter kenlm kenlm_util ${Boost_LIBRARIES} ${THREADS})
 
 if (NOT MSVC)
 	set(THREADS pthread)

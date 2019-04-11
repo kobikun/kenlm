@@ -26,6 +26,7 @@ if(EIGEN3_FOUND)
     endif()
   
     add_library(kenlm_interpolate ${KENLM_INTERPOLATE_SOURCE})
+		target_link_libraries(kenlm_interpolate kenlm kenlm_util ${Boost_LIBRARIES} ${THREADS})
   
     set(KENLM_INTERPOLATE_EXES
         interpolate
